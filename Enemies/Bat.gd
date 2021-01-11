@@ -2,9 +2,13 @@ extends KinematicBody2D
 
 var knockback = Vector2.ZERO
 
-onready var shadowAnimation = $AnimationPlayer
+onready var stats = $Stats
 
+onready var shadowAnimation = $AnimationPlayer
+ 
 func _ready():
+	print(stats.max_health)
+	print(stats.health)
 	shadowAnimation.play("Shadow")
 
 func _physics_process(delta):

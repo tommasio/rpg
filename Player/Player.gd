@@ -2,10 +2,10 @@ extends KinematicBody2D
 
 
 
-
-const FRINCTION = 500
-const ACCELERATIOM = 500
-const MAX_SPEED = 100 
+export var  ACCELERATIOM = 500
+export var  MAX_SPEED = 80
+export var  ROLL_SPEED= 120 
+export var FRICTION = 500 
 
 enum {
 	MOVE,
@@ -52,7 +52,7 @@ func move_state(delta):
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATIOM * delta)
 	else:
 		animationState.travel("Idle")
-		velocity = velocity.move_toward(Vector2.ZERO, FRINCTION * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	move()
 	
